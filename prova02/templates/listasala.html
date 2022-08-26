@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CINEMA</title>
+<style>
+*{
+    background-color: rgb(193, 226, 231);
+}
+label{
+    color: rgb(6, 65, 83);
+}
+</style>
+</head>
+<body>
+
+<h1>Listagem</h1>
+
+<table border="1">
+    <tr>
+        <td> Sala </td>
+        <td> Capacidade </td>
+    </tr>
+    {% for sala in sala_chave %}
+    <tr>
+        <td> {{ sala.nome }}</td>
+        <td> {{ sala.capacidade }}</td>
+        <td> 
+            <a href="{% url 'url_atualizar_sala' sala.id %}"> editar </a>
+        </td>
+        <td> 
+            <a href="{% url 'url_deletar_sala' sala.id %}"> deletar </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'url_criar_sala' %}"> Criar nova sala</a>
+</body>
+</html>

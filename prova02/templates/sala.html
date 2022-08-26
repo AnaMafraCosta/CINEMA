@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CINEMA</title>
+<style>
+    *{
+        background-color: rgb(193, 226, 231);
+    }
+    .teste{
+        color: rgb(6, 65, 83);
+    }
+    label{
+        color: rgb(6, 65, 83);
+    }
+</style>
+</head>
+
+<body>
+    <h1>Nova Sala</h1>
+
+    <form method="POST" >
+        {% csrf_token %}
+        {{form_sala.as_p}}
+        <button type="submit"> Salvar </button>
+    </form>
+
+</body>
+
+<script>
+    elemento = document.getElementById("id_nome");
+    elemento.classList.add("teste");
+    elemento = document.getElementById("id_capacidade");
+    elemento.classList.add("teste");
+</script>
+
+</html>
